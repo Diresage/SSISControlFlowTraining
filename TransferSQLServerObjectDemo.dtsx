@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="8/23/2024 11:05:30 AM"
+  DTS:CreationDate="8/23/2024 5:00:17 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SQLPractVM"
   DTS:CreatorName="SQLPractVM\AKosta87"
-  DTS:DTSID="{FFA23DAF-2BE6-45E8-877A-A4EA497A77D7}"
+  DTS:DTSID="{39938182-6F9C-4517-A75E-3F4477964D98}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="TransferDatabaseDemo"
+  DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{FF6E35B3-6564-4E0C-B9A7-ECC836244A0B}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{B5C7AA5A-4FFC-42FE-A3E5-09E6E1E2F41F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SQLPractVM]"
       DTS:CreationName="SMOServer"
-      DTS:DTSID="{0D78C6A2-DA04-43D4-8E69-04C6C59C7720}"
+      DTS:DTSID="{8102A33E-8966-46E5-9EAF-85DE08A3C224}"
       DTS:ObjectName="SQLPractVM">
       <DTS:ObjectData>
         <SMOServerConnectionManager
@@ -30,7 +30,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SQLPractVM\SQL2016]"
       DTS:CreationName="SMOServer"
-      DTS:DTSID="{477E0A1B-838E-4107-8A21-B227D42D66A8}"
+      DTS:DTSID="{6BB98255-38F5-4153-988C-F9D98668CE54}"
       DTS:ObjectName="SQLPractVM\SQL2016">
       <DTS:ObjectData>
         <SMOServerConnectionManager
@@ -42,27 +42,24 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Transfer Database Task"
-      DTS:CreationName="Microsoft.TransferDatabaseTask"
-      DTS:Description="Transfer Database Task"
-      DTS:DTSID="{C24AFB0D-79D0-40C1-857D-7A5C277A6402}"
-      DTS:ExecutableType="Microsoft.TransferDatabaseTask"
+      DTS:refId="Package\Transfer SQL Server Objects Task"
+      DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
+      DTS:Description="Transfer SQL Server Objects Task"
+      DTS:DTSID="{88C9E3AB-713C-4213-A909-DF2F6D571374}"
+      DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Transfer Database Task"
-      DTS:TaskContact="Transfer Database Task; Microsoft Corporation; SQL Server 2022; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="Transfer SQL Server Objects Task"
+      DTS:TaskContact="Transfer Objects Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <TransferDatabasesTaskData
-          SrcConn="{477E0A1B-838E-4107-8A21-B227D42D66A8}"
-          DestConn="{0D78C6A2-DA04-43D4-8E69-04C6C59C7720}"
-          Method="1"
-          SrcDBName="Demo"
-          ReattachSrcDB="True"
-          SrcDBFiles="&quot;Demo.mdf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL13.SQL2016\MSSQL\DATA&quot;,&quot;&quot;;&quot;Demo_log.ldf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL13.SQL2016\MSSQL\DATA&quot;,&quot;&quot;"
-          DestDBName="Demo"
-          DestDBFiles="&quot;Demo.mdf&quot;,&quot;C:\Outputs\Databases\&quot;,&quot;&quot;;&quot;Demo_log.ldf&quot;,&quot;C:\Outputs\Databases\&quot;,&quot;&quot;"
-          DestOverwrite="True" />
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{6BB98255-38F5-4153-988C-F9D98668CE54}"
+          DestinationConnection="{8102A33E-8966-46E5-9EAF-85DE08A3C224}"
+          SourceDatabase="Demo"
+          DestinationDatabase="Demo"
+          TablesList="1,17,[dbo].[DemoTable],"
+          CopyData="True" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -79,9 +76,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="197,42"
-          Id="Package\Transfer Database Task"
-          TopLeft="42,32" />
+          Size="247,42"
+          Id="Package\Transfer SQL Server Objects Task"
+          TopLeft="69,88" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
