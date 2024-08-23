@@ -1,0 +1,84 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/23/2024 5:29:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SQLPractVM"
+  DTS:CreatorName="SQLPractVM\AKosta87"
+  DTS:DTSID="{1E097C4A-5ECD-4C45-B316-C6F360CEC44E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{63665E90-6DD5-49AF-936A-AB1A7D79A8D3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{E56D191F-CA3E-42F5-9C4D-7D647B14C04D}"
+      DTS:ObjectName=".">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=.;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\Sql2016]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{8C182C27-8185-49D4-8E03-25A94416A63D}"
+      DTS:ObjectName=".\Sql2016">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=.\Sql2016;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Error Messages Task"
+      DTS:CreationName="Microsoft.TransferErrorMessagesTask"
+      DTS:Description="Transfer Error Messages Task"
+      DTS:DTSID="{641A1A57-08F7-469A-97B1-C98ECA45EEB7}"
+      DTS:ExecutableType="Microsoft.TransferErrorMessagesTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Error Messages Task"
+      DTS:TaskContact="Transfer Error Messages Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferErrorMessagesTaskData
+          ErrorMessagesList="3,6,500001,6,500002,6,500003,"
+          ErrorMessageLanguagesList="3,4,1033,4,1033,4,1033,"
+          SourceConnection="{8C182C27-8185-49D4-8E03-25A94416A63D}"
+          DestinationConnection="{E56D191F-CA3E-42F5-9C4D-7D647B14C04D}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Transfer Error Messages Task"
+          TopLeft="63,77" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
